@@ -76,7 +76,7 @@ Event id: 304c3ff1-ca8b-47f5-bf4a-d83015e1c6ad
 
 ## *** Ответ 2 ***  
 
-отправляем вторую тестовую ошибку 
+Создаем алерт, отправляем вторую тестовую ошибку 
 ```
 barmaq@test-ansible:~/monitoring/05$ sentry-cli send-event -m 'A test event number 2'
 Event dispatched.

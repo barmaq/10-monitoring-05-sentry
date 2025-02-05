@@ -37,15 +37,19 @@ Free Cloud account имеет ограничения:
 ок  
 ставим sentry-cli ( пришлось скачать скрипт через проксю - заблокированы  )  
 
+'''
 curl -sL https://sentry.io/get-cli/ | sh  
-проверяем  
 sentry-cli --help  
+'''
 
 используя DSN отправляем событие :  
+'''
 barmaq@test-ansible:~/monitoring/05$ export SENTRY_DSN='https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.ingest.de.sentry.io/4508765780639824'  
 barmaq@test-ansible:~/monitoring/05$ sentry-cli send-event -m 'A test event'  
 Event dispatched.  
 Event id: 304c3ff1-ca8b-47f5-bf4a-d83015e1c6ad  
+'''
+
 
 Список событий  
 ![Список событий](/images/2_1.png)  
@@ -70,6 +74,13 @@ Event id: 304c3ff1-ca8b-47f5-bf4a-d83015e1c6ad
 6. Дополнительно поэкспериментируйте с правилами алёртинга. Выбирайте разные условия отправки и создавайте sample events. 
 
 ## *** Ответ 2 ***  
+
+отправляем вторую тестовую ошибку 
+'''
+barmaq@test-ansible:~/monitoring/05$ sentry-cli send-event -m 'A test event number 2'
+Event dispatched.
+Event id: bfbba71c-3559-40f9-8235-f33d5ffc11a2
+'''
 
 Скриншот уведомления от алерта
 ![Список событий](/images/3_1.png)  
